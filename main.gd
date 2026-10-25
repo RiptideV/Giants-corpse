@@ -7,3 +7,17 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
+func _on_oceankill_body_entered(body):
+	if body is CharacterBody3D:
+		call_deferred("_reloadscene")
+		
+		
+func _reloadscene():
+	get_tree().change_scene_to_file("res://deathscreen.tscn")
+
+
+func _on_bed_body_entered(body):
+	if body is CharacterBody3D:
+		get_tree().change_scene_to_file("res://winscreen.tscn")

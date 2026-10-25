@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://sptdvlu0d8p5"]
+
+[ext_resource type="Script" uid="uid://hw6iu8eeurcu" path="res://winscreen.gd" id="1_h3yos"]
+[ext_resource type="FontFile" uid="uid://dc2b0p8pd2wwv" path="res://Assets/NotJamFaithless9.ttf" id="2_ehxyi"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_i4j32"]
+
+[node name="Winscreen" type="Node2D" unique_id=850987980]
+script = ExtResource("1_h3yos")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1908295199]
+offset_right = 1153.0
+offset_bottom = 645.0
+texture = SubResource("CanvasTexture_i4j32")
+
+[node name="Label" type="Label" parent="." unique_id=163204059]
+offset_left = 64.0
+offset_top = 216.0
+offset_right = 1121.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ehxyi")
+theme_override_font_sizes/font_size = 24
+text = "What a strange dream you had. 
+Being shrunk down and climbing through the skeleton of a dead man.
+"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=537425128]
+offset_left = 472.0
+offset_top = 296.0
+offset_right = 712.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("2_ehxyi")
+theme_override_font_sizes/font_size = 32
+text = "WAKE UP"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
