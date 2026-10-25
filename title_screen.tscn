@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://b3gdp1u58xr3b"]
+
+[ext_resource type="Texture2D" uid="uid://bp08femtoegta" path="res://Assets/Screenshot 2026-10-23 170000.png" id="2_05l2w"]
+[ext_resource type="FontFile" uid="uid://dc2b0p8pd2wwv" path="res://Assets/NotJamFaithless9.ttf" id="2_ig5kc"]
+
+[sub_resource type="GDScript" id="GDScript_ak2if"]
+script/source = "extends Control
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+
+
+func _on_start_pressed():
+	get_tree().change_scene_to_file(\"res://main.tscn\")
+
+
+func _on_quit_pressed():
+	get_tree().quit()
+"
+
+[node name="TitleScreen" type="Control" unique_id=1220216605]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ak2if")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2110617378]
+layout_mode = 0
+offset_left = -32.0
+offset_right = 1160.0
+offset_bottom = 646.0
+texture = ExtResource("2_05l2w")
+expand_mode = 1
+
+[node name="Start" type="Button" parent="." unique_id=2105727367]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 144.0
+offset_right = 693.0
+offset_bottom = 206.0
+theme_override_fonts/font = ExtResource("2_ig5kc")
+text = "Start"
+
+[node name="Quit" type="Button" parent="." unique_id=533827886]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 232.0
+offset_right = 693.0
+offset_bottom = 294.0
+theme_override_fonts/font = ExtResource("2_ig5kc")
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=498382101]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 96.0
+offset_right = 711.0
+offset_bottom = 168.0
+theme_override_fonts/font = ExtResource("2_ig5kc")
+theme_override_font_sizes/font_size = 30
+text = "Giant's Corpse"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

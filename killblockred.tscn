@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dacw458jbf523"]
+
+[ext_resource type="Script" uid="uid://b63t2i0jbqlep" path="res://killzone.gd" id="1_ywhnh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i4j32"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wl442"]
+albedo_color = Color(0.85769224, 0, 0.12667924, 1)
+emission_enabled = true
+emission = Color(1, 0.003921569, 0.011764706, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_i4j32"]
+material = SubResource("StandardMaterial3D_wl442")
+
+[node name="killblockred" type="Area3D" unique_id=1781487069]
+transform = Transform3D(1, 0, 0, 0, 0.110583186, 0, 0, 0, 1, 0, 0, 0)
+script = ExtResource("1_ywhnh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1288913894]
+shape = SubResource("BoxShape3D_i4j32")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D" unique_id=327376291]
+mesh = SubResource("BoxMesh_i4j32")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

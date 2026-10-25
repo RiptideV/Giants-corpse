@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ucqy36s7le85"]
+
+[ext_resource type="Script" uid="uid://bxgl2vknvuo5c" path="res://deathscreen.gd" id="1_0ajwu"]
+[ext_resource type="Texture2D" uid="uid://buxlymdk21rk2" path="res://Assets/Screenshot 2026-10-24 215925.png" id="2_0ajwu"]
+[ext_resource type="FontFile" uid="uid://dc2b0p8pd2wwv" path="res://Assets/NotJamFaithless9.ttf" id="3_elkug"]
+
+[node name="Deathscreen" type="Control" unique_id=1220216605]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ajwu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2110617378]
+layout_mode = 0
+offset_left = -32.0
+offset_right = 1160.0
+offset_bottom = 646.0
+texture = ExtResource("2_0ajwu")
+expand_mode = 1
+
+[node name="Try Again" type="Button" parent="." unique_id=2105727367]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 368.0
+offset_right = 685.0
+offset_bottom = 430.0
+theme_override_fonts/font = ExtResource("3_elkug")
+text = "Try again"
+
+[node name="Return to main menu" type="Button" parent="." unique_id=533827886]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 456.0
+offset_right = 685.0
+offset_bottom = 518.0
+theme_override_fonts/font = ExtResource("3_elkug")
+text = "Return to main menu
+"
+
+[node name="Label" type="Label" parent="." unique_id=498382101]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 715.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("3_elkug")
+theme_override_font_sizes/font_size = 30
+text = "YOU ARE DEAD"
+
+[connection signal="pressed" from="Try Again" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Try Again" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="Return to main menu" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Return to main menu" to="." method="_on_return_to_main_menu_pressed"]
